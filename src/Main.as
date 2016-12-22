@@ -5,7 +5,7 @@
 	
 	public class Main extends MovieClip{
 		
-		private static var VITESSE_JOUEUR = 5;
+		private static var VITESSE_JOUEUR = 4;
 		
 		private var upPress:Boolean = false;
 		private var downPress:Boolean = false;
@@ -19,7 +19,7 @@
 			terrain = TerrainGen.creerTerrain(new MapTest(0, 0));
 			addChild(terrain);
 			joueur = new Joueur(terrain);
-			joueur.x = 500;
+			joueur.x = 200;
 			joueur.y = 300;
 			addChild(joueur);
 			this.addEventListener(Event.ENTER_FRAME, loop);

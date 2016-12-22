@@ -4,6 +4,8 @@
 	
 	public class TerrainGen{
 		
+		private static const GRANDEUR_CASE:int = 32;
+		
 		public function TerrainGen():void{
 			
 		}
@@ -14,14 +16,14 @@
 				for(var x:uint = 0; x<image.height; x++){
 					var couleur:uint = image.getPixel(x, y);
 					if(couleur == 0xDB5151){
-						var nouvMur:Mur = new Mur();
-						nouvMur.x = x*64;
-						nouvMur.y = y*64;
+						var nouvMur:Deco = new Deco();
+						nouvMur.x = x*GRANDEUR_CASE;
+						nouvMur.y = y*GRANDEUR_CASE;
 						nouvTerrain.ajouterCase(nouvMur);
 					}else if(couleur == 0xDBCD51){
 						var nouvPlancher:Plancher = new Plancher();
-						nouvPlancher.x = x*64;
-						nouvPlancher.y = y*64;
+						nouvPlancher.x = x*GRANDEUR_CASE;
+						nouvPlancher.y = y*GRANDEUR_CASE;
 						nouvTerrain.ajouterCase(nouvPlancher);
 					}
 				}
