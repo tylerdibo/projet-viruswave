@@ -2,10 +2,11 @@
 	
 	import flash.display.*;
 	
-	public class Joueur extends MovieClip{
+	public class Joueur extends MovieClip implements IControlable{
 		
 		//Hitbox: http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/display/Sprite.html#hitArea
 
+		private var vitesse:int = 5;
 		private var vx:int = 0;
 		private var vy:int = 0;
 		private var terrain:Terrain;
@@ -14,7 +15,7 @@
 			this.terrain = terrain;
 		}
 		
-		public function tirer(xCible:int, yCible:int){
+		public function clic(xCible:int, yCible:int):void{
 			var laser:Laser = new Laser(this.x + this.width/2, this.y + this.height/2, xCible, yCible, terrain);
 			stage.addChild(laser);
 		}
@@ -34,11 +35,11 @@
 		}
 		
 		public function setVitesseX(vitx:int):void{
-			vx = vitx;
+			vx = vitx * vitesse;
 		}
 		
 		public function setVitesseY(vity:int):void{
-			vy = vity;
+			vy = vity * vitesse;
 		}
 		
 		private function testCollision():Boolean{
