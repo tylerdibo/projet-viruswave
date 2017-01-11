@@ -16,7 +16,7 @@
 				for(var x:uint = 0; x<image.height; x++){
 					var couleur:uint = image.getPixel(x, y);
 					if(couleur == 0xDB5151){
-						var nouvMur:Deco = new Deco();
+						var nouvMur:Mur = new Mur();
 						nouvMur.x = x*GRANDEUR_CASE;
 						nouvMur.y = y*GRANDEUR_CASE;
 						nouvTerrain.ajouterCase(nouvMur);
