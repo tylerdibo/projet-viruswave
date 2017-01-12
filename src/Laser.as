@@ -6,7 +6,7 @@
 	
 	public class Laser extends MovieClip{
 		
-		private const VITESSE_LASER:int = 20;
+		private const VITESSE_LASER:int = 10;
 		
 		private var laserDeplace:Point;
 		private var terrain:Terrain;
