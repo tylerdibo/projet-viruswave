@@ -24,6 +24,13 @@
 		private function loop(event:Event){
 			this.x += laserDeplace.x;
 			this.y += laserDeplace.y;
+			
+			for(var e:uint = 0; e<terrain.ennemis.length; e++){
+				if(hitTestObject(terrain.ennemis[e])){
+					stage.removeChild(terrain.ennemis[e]);
+					break;
+				}
+			}
 			//stop if hit wall
 			for(var i:uint = 0; i<terrain.murs.length; i++){
 				if(hitTestObject(terrain.murs[i])){

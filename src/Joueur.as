@@ -22,16 +22,12 @@
 		
 		public function updatePositionX():void{
 			this.x += vx;
-			if(testCollision()){
-				this.x -= vx;
-			}
+			testCollisionX();
 		}
 		
 		public function updatePositionY():void{
 			this.y += vy;
-			if(testCollision()){
-				this.y -= vy;
-			}
+			testCollisionY();
 		}
 		
 		public function setVitesseX(vitx:int):void{
@@ -42,9 +38,32 @@
 			vy = vity * vitesse;
 		}
 		
-		private function testCollision():Boolean{
+		private function testCollisionX():Boolean{
 			for(var i:uint = 0; i<terrain.murs.length; i++){
 				if(hitTestObject(terrain.murs[i])){
+					do{
+						if(vx > 0){
+							this.x--;
+						}else{
+							this.x++;
+						}
+					}while(hitTestObject(terrain.murs[i]));
+					return true;
+				}
+			}
+			return false;
+		}
+		
+		private function testCollisionY():Boolean{
+			for(var i:uint = 0; i<terrain.murs.length; i++){
+				if(hitTestObject(terrain.murs[i])){
+					do{
+						if(vy > 0){
+							this.y--;
+						}else{
+							this.y++;
+						}
+					}while(hitTestObject(terrain.murs[i]));
 					return true;
 				}
 			}

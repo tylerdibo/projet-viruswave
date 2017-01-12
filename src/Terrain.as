@@ -6,6 +6,7 @@
 		
 		public var murs:Array = new Array();
 		public var decos:Array = new Array();
+		public var ennemis:Array = new Array();
 		
 		public function Terrain():void{
 			/*for(var i:uint; i<5; i++){
@@ -15,6 +16,12 @@
 				murs.push(mur);
 				addChild(mur);
 			}*/
+			
+			var ennemi:Ennemi = new Ennemi();
+			ennemi.x = 200;
+			ennemi.y = 100;
+			ennemis.push(ennemi);
+			addChild(ennemi);
 		}
 		
 		public function ajouterCase(case1:MovieClip):void{
