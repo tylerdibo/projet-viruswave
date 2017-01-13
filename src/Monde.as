@@ -12,7 +12,7 @@
 		private var adware:IAAdware;
 		
 		public function Monde():void{
-			terrain = TerrainGen.creerTerrain(new MapTest(0, 0));
+			terrain = TerrainGen.creerTerrain(new MapTest2(0, 0));
 			addChild(terrain);
 			joueur = new Joueur(terrain);
 			joueur.x = 200;

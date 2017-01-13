@@ -16,17 +16,12 @@
 				murs.push(mur);
 				addChild(mur);
 			}*/
-			
-			var ennemi:Ennemi = new Ennemi();
-			ennemi.x = 200;
-			ennemi.y = 100;
-			ennemis.push(ennemi);
-			addChild(ennemi);
 		}
 		
 		public function ajouterCase(case1:MovieClip):void{
 			if(case1 is Mur){
 				murs.push(case1);
+				addChild(case1);
 			}else if(case1 is Deco){
 				decos.push(case1);
 			}else{
