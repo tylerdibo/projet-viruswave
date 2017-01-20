@@ -7,6 +7,8 @@
 		public var murs:Array = new Array();
 		public var decos:Array = new Array();
 		public var ennemis:Array = new Array();
+		public var joueur:Joueur;
+		public var porte:Porte;
 		
 		public function Terrain():void{
 			/*for(var i:uint; i<5; i++){

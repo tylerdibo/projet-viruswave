@@ -16,7 +16,7 @@
 		}
 		
 		public function clic(xCible:int, yCible:int):void{
-			var laser:Laser = new Laser(this.x + this.width/2, this.y + this.height/2, xCible, yCible, terrain);
+			var laser:Laser = new Laser(this.x + this.width/2, this.y + this.height/2, xCible, yCible, terrain, true);
 			stage.addChild(laser);
 		}
 		

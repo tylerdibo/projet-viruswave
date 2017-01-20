@@ -10,8 +10,10 @@
 		
 		private var laserDeplace:Point;
 		private var terrain:Terrain;
+		private var cibleEnnemi:Boolean;
 		
-		public function Laser(xOrigine:int, yOrigine:int, xCible:int, yCible:int, terrain:Terrain):void{
+		public function Laser(xOrigine:int, yOrigine:int, xCible:int, yCible:int, terrain:Terrain, cibleEnnemi:Boolean):void{
+			this.cibleEnnemi = cibleEnnemi;
 			this.terrain = terrain;
 			this.x = xOrigine;
 			this.y = yOrigine;
@@ -21,21 +23,34 @@
 			this.addEventListener(Event.ENTER_FRAME, loop);
 		}
 		
+		private function removeThis(){
+			stage.removeChild(this);
+			this.removeEventListener(Event.ENTER_FRAME, loop);
+		}
+		
 		private function loop(event:Event){
 			this.x += laserDeplace.x;
 			this.y += laserDeplace.y;
 			
-			for(var e:uint = 0; e<terrain.ennemis.length; e++){
-				if(hitTestObject(terrain.ennemis[e])){
-					stage.removeChild(terrain.ennemis[e]);
-					break;
+			if(cibleEnnemi){
+				for(var e:uint = 0; e<terrain.ennemis.length; e++){
+					if(hitTestObject(terrain.ennemis[e])){
+						terrain.removeChild(terrain.ennemis[e]);
+						Stats.addition(Stats.ELIM);
+						removeThis();
+						break;
+					}
+				}
+			}else{
+				if(hitTestObject(terrain.joueur)){
+					
 				}
 			}
+			
 			//stop if hit wall
 			for(var i:uint = 0; i<terrain.murs.length; i++){
 				if(hitTestObject(terrain.murs[i])){
-					stage.removeChild(this);
-					this.removeEventListener(Event.ENTER_FRAME, loop);
+					removeThis();
 					break;
 				}
 			}

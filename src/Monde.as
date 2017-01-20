@@ -5,27 +5,22 @@
 	
 	public class Monde extends MovieClip{
 		
-		private var terrain:Terrain;
+		public var terrain:Terrain;
 		public var joueur:Joueur;
 		private var entree:Entree;
-		private var ennemi:Joueur;
+		private var ennemi:Adware;
 		private var adware:IAAdware;
 		
 		public function Monde():void{
-			terrain = TerrainGen.creerTerrain(new MapTest2(0, 0));
+			terrain = TerrainGen.creerTerrain(new MapTest2(0, 0), this);
 			addChild(terrain);
 			joueur = new Joueur(terrain);
 			joueur.x = 200;
 			joueur.y = 300;
 			addChild(joueur);
+			terrain.joueur = joueur;
 			entree = new Entree(joueur);
 			addChild(entree);
-			
-			ennemi = new Joueur(terrain);
-			ennemi.x = 200;
-			ennemi.y = 100;
-			adware = new IAAdware(ennemi, this);
-			addChild(ennemi);
 		}
 		
 		function init(){
@@ -36,6 +31,9 @@
 		function loop(event:Event):void{
 			joueur.updatePositionX();
 			joueur.updatePositionY();
+			//adware.loop();
+			//ennemi.updatePositionX();
+			//ennemi.updatePositionY();
 		}
 		
 	}	
