@@ -5,38 +5,36 @@
 	
 	public class MenuPrinc extends MovieClip{
 		
+		private var menuS:MenuStat;
+		
 		public function MenuPrinc():void{
-			
-			btnPartie.addEventListener(MouseEvent.CLICK, partie);
 			
 			btnOptions.addEventListener(MouseEvent.CLICK, options);
 			
 			btnStats.addEventListener(MouseEvent.CLICK, stats);
 			
 			btnAide.addEventListener(MouseEvent.CLICK, aide);
-			
-			btnQuitter.addEventListener(MouseEvent.CLICK, quitter);
 		
 		} //fin de fonction publique
-		
-		function partie (event:MouseEvent):void {
-			Main.nPartie();
-		}
 		
 		function options (event:MouseEvent):void {
 			trace("test");
 		}
 		
 		function stats (event:MouseEvent):void {
-			trace("test");
+			menuS = new MenuStat();
+			addChild(menuS);
+			menuS.btnRetour.addEventListener(MouseEvent.CLICK, retour);
 		}	
 		
-		function aide (event:MouseEvent):void {
-			trace("test");
-		}
+		function retour (event:MouseEvent):void {
+				removeChild(menuS);
+			}
 		
-		function quitter (event:MouseEvent):void {
-			trace("tests");
+		function aide (event:MouseEvent):void {
+			menuO = new MenuStat();
+			addChild(menuO);
+			menuO.btnRetour.addEventListener(MouseEvent.CLICK, retour);
 		}
 		
 	}

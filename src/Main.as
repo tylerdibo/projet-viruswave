@@ -1,6 +1,7 @@
 ﻿package {
 	
 	import flash.display.*;
+	import flash.events.*;
 	
 	public class Main extends MovieClip{
 		private var menu:MenuPrinc;
@@ -9,8 +10,10 @@
 			
 			menu = new MenuPrinc();
 			addChild(menu);
+			menu.btnPartie.addEventListener(MouseEvent.CLICK, partie);
+			
 		}
-		function nPartie ():void {
+		function partie (event:MouseEvent):void {
 			monde = new Monde();
 			addChild(monde);
 			monde.init();
