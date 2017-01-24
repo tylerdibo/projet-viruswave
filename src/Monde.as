@@ -14,7 +14,7 @@
 		public function Monde():void{
 			terrain = TerrainGen.creerTerrain(new MapTest2(0, 0), this);
 			addChild(terrain);
-			joueur = new Joueur(terrain);
+			joueur = new Joueur(this);
 			joueur.x = 200;
 			joueur.y = 300;
 			addChild(joueur);

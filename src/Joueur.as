@@ -3,16 +3,19 @@
 	import flash.display.*;
 	
 	public class Joueur extends MovieClip implements IControlable{
-		
-		//Hitbox: http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/display/Sprite.html#hitArea
-
+	
 		private var vitesse:int = 5;
 		private var vx:int = 0;
 		private var vy:int = 0;
 		private var terrain:Terrain;
+		private var monde:Monde;
+		private var blessures:int = 3;
+		//private var hitbox:Rectangle;
 		
-		public function Joueur(terrain:Terrain):void{
-			this.terrain = terrain;
+		public function Joueur(monde:Monde):void{
+			this.monde = monde;
+			terrain = monde.terrain;
+			//hitbox = new Rectangle(5, 2, 6, 32);
 		}
 		
 		public function clic(xCible:int, yCible:int):void{
@@ -36,6 +39,13 @@
 		
 		public function setVitesseY(vity:int):void{
 			vy = vity * vitesse;
+		}
+		
+		public function frappe():void{
+			blessures--;
+			if(blessures <= 0){
+				
+			}
 		}
 		
 		private function testCollisionX():Boolean{

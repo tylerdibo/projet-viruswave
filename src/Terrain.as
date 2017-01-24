@@ -31,6 +31,18 @@
 			}
 		}
 		
+		public function ennemiMort(nEnnemi:uint){
+			removeChild(ennemis[nEnnemi]);
+			for (var i:uint=nEnnemi; i < ennemis.length; i++){
+				ennemis[i] = ennemis[i+1];
+			}
+			ennemis.pop();
+
+			if(ennemis.length <= 0){
+				porte.gotoAndPlay(2);
+			}
+		}
+		
 	}
 	
 }

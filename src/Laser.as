@@ -35,7 +35,7 @@
 			if(cibleEnnemi){
 				for(var e:uint = 0; e<terrain.ennemis.length; e++){
 					if(hitTestObject(terrain.ennemis[e])){
-						terrain.removeChild(terrain.ennemis[e]);
+						terrain.ennemiMort(e);
 						Stats.addition(Stats.ELIM);
 						removeThis();
 						break;
@@ -43,7 +43,7 @@
 				}
 			}else{
 				if(hitTestObject(terrain.joueur)){
-					
+					terrain.joueur.frappe();
 				}
 			}
 			

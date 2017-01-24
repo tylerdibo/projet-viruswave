@@ -16,6 +16,7 @@
 						var nouvPorte:Porte = new Porte();
 						nouvPorte.x = x*GRANDEUR_CASE;
 						nouvPorte.y = y*GRANDEUR_CASE;
+						nouvPorte.gotoAndStop(1);
 						nouvTerrain.addChild(nouvPorte);
 						nouvTerrain.porte = nouvPorte;
 						break;
