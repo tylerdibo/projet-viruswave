@@ -10,6 +10,7 @@
 		private var entree:Entree;
 		private var ennemi:Adware;
 		private var adware:IAAdware;
+		private var fin:Fin;
 		
 		public function Monde():void{
 			terrain = TerrainGen.creerTerrain(new MapTest2(0, 0), this);
@@ -36,6 +37,15 @@
 			//ennemi.updatePositionY();
 		}
 		
+		function mort():void{
+			 while(stage.numChildren > 0)
+			 {
+				stage.removeChildAt(0); 
+			 }
+			 fin = new Fin;
+			 addChild(fin);
+				
+		} // fin mort
 	}	
 
 }
