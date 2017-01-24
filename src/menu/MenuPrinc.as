@@ -6,20 +6,15 @@
 	public class MenuPrinc extends MovieClip{
 		
 		private var menuS:MenuStat;
+		private var menuA:MenuAide;
 		
 		public function MenuPrinc():void{
-			
-			btnOptions.addEventListener(MouseEvent.CLICK, options);
 			
 			btnStats.addEventListener(MouseEvent.CLICK, stats);
 			
 			btnAide.addEventListener(MouseEvent.CLICK, aide);
 		
 		} //fin de fonction publique
-		
-		function options (event:MouseEvent):void {
-			trace("test");
-		}
 		
 		function stats (event:MouseEvent):void {
 			menuS = new MenuStat();
@@ -32,10 +27,14 @@
 			}
 		
 		function aide (event:MouseEvent):void {
-			menuO = new MenuStat();
-			addChild(menuO);
-			menuO.btnRetour.addEventListener(MouseEvent.CLICK, retour);
+			menuA = new MenuAide();
+			addChild(menuA);
+			menuA.btnRetourA.addEventListener(MouseEvent.CLICK, retourA);
 		}
+		
+		function retourA (event:MouseEvent):void {
+				removeChild(menuA);
+			}
 		
 	}
 

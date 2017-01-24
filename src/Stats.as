@@ -1,9 +1,9 @@
-﻿// Classe écrit par: Adrian Giammaria
+﻿// Classe par: Adrian Giammaria
 package{
 	
-	public class Stats {
-		private static var nTemps:int;
-		public static const TEMPS:int = 0;
+	public class Stats { //défini stats comme classe publique
+		private static var nTemps:int; //défini variable nTemps comme entier
+		public static const TEMPS:int = 0; //défini constant TEMPS comme entier égale à 0 pour l'identifier
 		
 		private static var nComplete:int;
 		public static const NCOMPLETE:int = 1;
@@ -21,7 +21,7 @@ package{
 		public static const TIRSR:int = 5;
 		
 	public function Stats() {
-			nTemps = 0;
+			nTemps = 0; //entier nTemps est égale à 0
 			nComplete = 0;
 			nElim = 0;
 			nJElim = 0;
@@ -29,27 +29,27 @@ package{
 			nTirsR = 0;
 		} //fin constructeur
 		
-	static function addition(variable:int):void {
-		switch(variable)
+	static function addition(variable:int):void { //fonction pour additionner aux statistiques
+		switch(variable) 
 			{ // switch 
-			case TEMPS:
-				nTemps++;
+			case TEMPS: 
+				nTemps++; //ajoute 1 au temps joué
 				break;
 			case NCOMPLETE:
-				nComplete++;
+				nComplete++; //ajoute 1 au nombre de niveaux complèté
 				break;
-			case ELIM:
-				nElim++;
+			case ELIM: 
+				nElim++; //ajoute 1 au nombre d'ennemis éliminé
 				break;
 			case JELIM:
-				nJElim++;
+				nJElim++; //ajoute 1 au nombre de fois le joueur est éliminé
 				break;
 			case TIRS:
-				nTirs++;
+				nTirs++; //ajout 1 au nombre de fois le joueur a tiré
 				trace(nTirs);
 				break;
 			case TIRSR:
-				nTirsR++;
+				nTirsR++; //ajout 1 au nombre de fois le joueur a réussi a frapper un ennemi
 				break;
 			} //fin switch
 	} // fin fonction addition
@@ -59,7 +59,7 @@ package{
 		switch(variable)
 			{ // switch 
 			case TEMPS:
-				nTemps = 0;
+				nTemps = 0; //remet la variable nTemps à 0
 				break;
 			case NCOMPLETE:
 				nComplete = 0;
@@ -76,7 +76,7 @@ package{
 			case TIRSR:
 				nTirsR = 0;
 				break;
-			default:
+			default: //remet tout les valeurs à 0
 				nTemps = 0;
 				nComplete = 0;
 				nElim = 0;
@@ -86,6 +86,32 @@ package{
 				break;
 			} //fin switch
 	} //fin fonction supprime
+	
+	public static function affiche(variable:int):int { //fonction affiche retourne un entier
+		switch(variable) 
+			{ //switch
+		case TEMPS:
+			return nTemps; //retourne valeur contenu dans le variable nTemps
+			break;
+		case NCOMPLETE:
+			return nComplete;
+			break;
+		case ELIM:
+			return nElim;
+			break;
+		case JELIM:
+			return nJElim;
+			break;
+		case TIRS:
+			return nTirs;
+			break;
+		case TIRSR:
+			return nTirsR;
+			break;
+		}
+		return 0; //assure que la fonction peut retourner une valeur pour éviter un erreur 
+	}
+	
 		
 	} //fin classe publique
 }//fin paquetage

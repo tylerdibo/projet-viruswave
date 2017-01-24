@@ -1,16 +1,18 @@
-﻿// Classe par: Adrian Giammaria
-package{
+﻿package{
 	import flash.events.Event;
 	import flash.display.*;
-	import flash.text.*;
 	import flash.events.MouseEvent;
 	
-	public class MenuStat extends MovieClip{
-			
+	public class Fin extends MovieClip{
+		
 			var affichage:String="";
-			
-		public function MenuStat() {
-			var monMessage:TextField = new TextField();
+			var affichageFin:String="";
+		
+		public function Fin():void{
+		
+		} //fin de fonction publiquek
+		
+		var monMessage:TextField = new TextField();
 			monMessage.x = 100;
 			monMessage.y = 50;
 			monMessage.autoSize = TextFieldAutoSize.CENTER;
@@ -27,8 +29,7 @@ package{
 			+ "\n" + "nombre de tirs réussi:" + " " + (Stats.affiche(Stats.TIRSR));
 			monMessage.text = affichage;
 			addChild(monMessage);
-		}
-		
-		
+	
 	}
+
 }
