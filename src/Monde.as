@@ -13,7 +13,7 @@
 		private var fin:Fin;
 		
 		public function Monde():void{
-			terrain = TerrainGen.creerTerrain(new MapTest2(0, 0), this);
+			terrain = TerrainGen.creerTerrain(new map01(0, 0);
 			addChild(terrain);
 			joueur = new Joueur(this);
 			joueur.x = 200;
@@ -32,11 +32,11 @@
 		function loop(event:Event):void{
 			joueur.updatePositionX();
 			joueur.updatePositionY();
-			for(var i:uint = 0; i < terrain.ennemis.length; i++){
+			/*for(var i:uint = 0; i < terrain.ennemis.length; i++){
 				terrain.ennemis[i].ia.loop();
 				terrain.ennemis[i].updatePositionX();
 				terrain.ennemis[i].updatePositionY();
-			} 
+			} */
 			//adware.loop();
 			//ennemi.updatePositionX();
 			//ennemi.updatePositionY();
