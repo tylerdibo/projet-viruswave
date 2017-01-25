@@ -2,6 +2,7 @@
 	import flash.events.Event;
 	import flash.display.*;
 	import flash.events.MouseEvent;
+	import flash.text.*
 	
 	public class Fin extends MovieClip{
 		
@@ -10,9 +11,9 @@
 		
 		public function Fin():void{
 		
-		} //fin de fonction publiquek
 		
-		var monMessage:TextField = new TextField();
+		
+			var monMessage:TextField = new TextField();
 			monMessage.x = 100;
 			monMessage.y = 50;
 			monMessage.autoSize = TextFieldAutoSize.CENTER;
@@ -29,6 +30,8 @@
 			+ "\n" + "nombre de tirs réussi:" + " " + (Stats.affiche(Stats.TIRSR));
 			monMessage.text = affichage;
 			addChild(monMessage);
+			
+		} //fin de fonction publiquek
 	
 	}
 
