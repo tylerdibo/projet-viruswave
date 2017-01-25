@@ -10,18 +10,13 @@
 			var affichageFin:String="";
 		
 		public function Fin():void{
-		
-		
-		
 			var monMessage:TextField = new TextField();
 			monMessage.x = 100;
 			monMessage.y = 50;
 			monMessage.autoSize = TextFieldAutoSize.CENTER;
 			monMessage.textColor = 0xffffff;
-			trace(Stats.affiche(Stats.ELIM));
 			
-			affichage=""
-			affichage = affichage 
+			affichage=affichage 
 			+ "\n" + "temps joué:" + " " + (Stats.affiche(Stats.TEMPS))
 			+ "\n" + "nombre de niveaux complété:" + " " + (Stats.affiche(Stats.NCOMPLETE)) 
 			+ "\n" + "nombre d'éliminations:" + " " + (Stats.affiche(Stats.ELIM)) 

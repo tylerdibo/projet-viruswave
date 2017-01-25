@@ -24,6 +24,13 @@
 			stage.addEventListener(MouseEvent.MOUSE_UP, mouseUp);
 		}
 		
+		function remove():void{
+			stage.removeEventListener(KeyboardEvent.KEY_DOWN, keyDown);
+			stage.removeEventListener(KeyboardEvent.KEY_UP, keyUp);
+			stage.removeEventListener(MouseEvent.MOUSE_DOWN, mouseDown);
+			stage.removeEventListener(MouseEvent.MOUSE_UP, mouseUp);
+		}
+		
 		function keyDown(event:KeyboardEvent):void{
 			switch(event.keyCode){
 				case 37:

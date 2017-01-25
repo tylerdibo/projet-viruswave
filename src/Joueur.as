@@ -43,7 +43,7 @@
 		
 		public function frappe():void{
 			blessures--;
-			if(blessures <= 0){
+			if(blessures == 0){
 				monde.mort();
 			}
 		}

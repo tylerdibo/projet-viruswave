@@ -7,10 +7,6 @@
 	import flash.display.BitmapData;
 	import flash.display.Loader;
 	
-	
-	
-
-
 	public class IAAdware{
 		
 		private static var animation:BitmapData;
@@ -30,7 +26,7 @@
 			
 			timer = new Timer(1000); //Créer un nouveau Timer qui donne un événement à chaque 5 secondes.
 			timer.addEventListener(TimerEvent.TIMER, periodique);
-			//timer.start();
+			timer.start();
 			/*if (!animation) {
 			var charge:Loader = new Loader();
 			//charge.contentLoaderInfo.addEventListener(Event.COMPLETE, onLoadComplete);
@@ -45,6 +41,11 @@
 		
 		public function loop():void{
 			//adware.setVitesseX(1);
+		}
+		
+		public function mort():void{
+			timer.stop();
+			timer.removeEventListener(TimerEvent.TIMER, periodique);
 		}
 		
 		/********************************************************************

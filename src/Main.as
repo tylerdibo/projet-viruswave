@@ -14,7 +14,7 @@
 			addChild(menu);
 			menu.btnPartie.addEventListener(MouseEvent.CLICK, partie); //Ajouter un écouteur d'événement pour commencer le jeu.
 			stats = new XML(new Stats());
-			trace(stats.children());
+			//trace(stats.children());
 		} //fin de constructeur
 		function partie (event:MouseEvent):void {
 			//Création du monde de jeu et ajoute-le à la scène.

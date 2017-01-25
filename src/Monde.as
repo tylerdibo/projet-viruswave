@@ -6,6 +6,7 @@
 	public class Monde extends MovieClip{
 		
 		public var terrain:Terrain;
+		private var terrainsListe:Array = new Array();
 		public var joueur:Joueur;
 		private var entree:Entree;
 		private var ennemi:Adware;
@@ -43,11 +44,14 @@
 		}
 		
 		function mort():void{
-			 while(stage.numChildren > 0)
-			 {
-				stage.removeChildAt(0); 
-			 }
-			 fin = new Fin;
+			for(var i:uint = 0; i < terrain.ennemis.length; i++){
+				terrain.ennemis[i].ia.mort();
+			} 
+			 removeChild(terrain);
+			 removeChild(joueur);
+			 entree.remove();
+			 removeChild(entree);
+			 fin = new Fin();
 			 stage.addChild(fin);
 				
 		} // fin mort

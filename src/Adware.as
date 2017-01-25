@@ -3,6 +3,7 @@
 	public class Adware extends Ennemi{
 		
 		private var terrain:Terrain;
+		public var ia:IAAdware;
 		
 		public function Adware(terrain:Terrain){
 			this.terrain = terrain;

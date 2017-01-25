@@ -42,6 +42,7 @@
 			nouvEnnemi.x = x*GRANDEUR_CASE;
 			nouvEnnemi.y = y*GRANDEUR_CASE;
 			var adware:IAAdware = new IAAdware(nouvEnnemi, monde);
+			nouvEnnemi.ia = adware;
 			nouvTerrain.ennemis.push(nouvEnnemi);
 			nouvTerrain.addChild(nouvEnnemi);
 			
