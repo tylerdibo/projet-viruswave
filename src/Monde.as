@@ -14,7 +14,12 @@
 		private var fin:Fin;
 		
 		public function Monde():void{
-			terrain = TerrainGen.creerTerrain(new map01(0, 0);
+			var maps:Array = new Array();
+			maps.push(new map01(0, 0));
+			maps.push(new map02(0, 0));
+			maps.push(new map03(0, 0));
+			maps.push(new map04(0, 0));
+			terrain = TerrainGen.creerTerrain(maps, this);
 			addChild(terrain);
 			joueur = new Joueur(this);
 			joueur.x = 200;

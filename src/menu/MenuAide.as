@@ -16,12 +16,10 @@ package{
 			monMessage.autoSize = TextFieldAutoSize.CENTER; //centrer le text dans monMessage
 			monMessage.textColor = 0xffffff; //définir le couleur du text dans monMessage 
 			
-			affichage="" //fait certain que affichage est vide
-			affichage = affichage //définir le text contenu dans affichage
-			+ "Utilise les touches fléchées pour bouger\n"  
-			+ "Pour tirer, diriger la souris sur le point ou tu veut tirer et cliquer\n"
-			+ "Lorsque tout les ennemis sur un écran sont éliminer, vous pouvez continuer\nau prochaine niveau\n"
-			+ "Si vous êtes attaqué 5 fois il faut recommencer\n"; 
+			affichage = "Utilisez les touches fléchées pour bouger.\n"  //définir le text contenu dans affichage
+			+ "Pour tirer, dirigez la souris sur le point où tu veux tirer et cliquez.\n"
+			+ "Lorsque tous les ennemis sur l'écran sont élimines, vous pouvez continuer\nau prochain niveau en passant par la porte.\n"
+			+ "Si vous êtes attaqués 3 fois il faut recommencer.\n"; 
 			monMessage.text = affichage; //le contenu de affichage serais mis dans le champ de text
 			addChild(monMessage); //ajoute monMessage sur le scène
 		} // fin constructeur
