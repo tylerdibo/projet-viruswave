@@ -48,8 +48,8 @@
 			}
 			
 			//stop if hit wall
-			for(var i:uint = 0; i<terrain.murs.length; i++){
-				if(hitTestObject(terrain.murs[i])){
+			for(var i:uint = 0; i<terrain.mursLaser.length; i++){
+				if(hitTestObject(terrain.mursLaser[i])){
 					removeThis();
 					break;
 				}

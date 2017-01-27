@@ -38,14 +38,16 @@
 		function loop(event:Event):void{
 			joueur.updatePositionX();
 			joueur.updatePositionY();
-			/*for(var i:uint = 0; i < terrain.ennemis.length; i++){
+			
+			if(terrain.porteActive){
+				
+			}
+			
+			for(var i:uint = 0; i < terrain.ennemis.length; i++){
 				terrain.ennemis[i].ia.loop();
 				terrain.ennemis[i].updatePositionX();
 				terrain.ennemis[i].updatePositionY();
-			} */
-			//adware.loop();
-			//ennemi.updatePositionX();
-			//ennemi.updatePositionY();
+			}
 		}
 		
 		function mort():void{

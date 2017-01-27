@@ -8,9 +8,42 @@
 
 		public static function creerTerrain(images:Array, monde:Monde):Terrain {
 			var nouvTerrain:Terrain = new Terrain();
+
+			var murExt:Mur;
+			for (var xMur:uint = 0; xMur < (images[0].width*2); xMur++) {
+				murExt = new Mur();
+				murExt.gotoAndStop(int(Math.random()*5));
+				murExt.x=(xMur+1)*GRANDEUR_CASE;
+				murExt.y=0;
+				murExt.visible = false;
+				nouvTerrain.ajouterCase(murExt, false);
+				
+				murExt = new Mur();
+				murExt.gotoAndStop(int(Math.random()*5));
+				murExt.x=(xMur+1)*GRANDEUR_CASE;
+				murExt.y=(images[0].height*2 + 1)*GRANDEUR_CASE;
+				nouvTerrain.ajouterCase(murExt, false);
+			}
+			
+			for (var yMur:uint = 0; yMur < (images[0].height*2); yMur++) {
+				murExt = new Mur();
+				murExt.gotoAndStop(int(Math.random()*5));
+				murExt.x=0;
+				murExt.y=yMur*GRANDEUR_CASE;
+				murExt.visible = false;
+				nouvTerrain.ajouterCase(murExt, false);
+				
+				murExt = new Mur();
+				murExt.gotoAndStop(int(Math.random()*5));
+				murExt.x=(images[0].width*2 + 1)*GRANDEUR_CASE;
+				murExt.y=yMur*GRANDEUR_CASE;
+				murExt.visible = false;
+				nouvTerrain.ajouterCase(murExt, false);
+			}
+
 			for (var quad:uint = 0; quad<4; quad++) {
-				var xDecalage:uint = (quad % 2) * images[0].width;
-				var yDecalage:uint = uint(quad / 2) * images[0].height;
+				var xDecalage:uint = 1 + (quad % 2) * images[0].width;
+				var yDecalage:uint = 1 + uint(quad/2)*images[0].height;
 
 				for (var y:uint = yDecalage; y<(images[quad].height + yDecalage); y++) {
 					for (var x:uint = xDecalage; x<(images[quad].width + xDecalage); x++) {
@@ -29,23 +62,41 @@
 								nouvPlancher.gotoAndStop(int(Math.random()*4));
 								nouvPlancher.x=x*GRANDEUR_CASE;
 								nouvPlancher.y=y*GRANDEUR_CASE;
-								nouvTerrain.ajouterCase(nouvPlancher);
+								nouvTerrain.ajouterCase(nouvPlancher, false);
 								break;
-							case 0xFF00FF :
+							case 0xFF0000 :
 								var nouvMur:Mur = new Mur();
 								nouvMur.gotoAndStop(int(Math.random()*5));
 								nouvMur.x=x*GRANDEUR_CASE;
 								nouvMur.y=y*GRANDEUR_CASE;
-								nouvTerrain.ajouterCase(nouvMur);
+								nouvTerrain.ajouterCase(nouvMur, true);
 								break;
 						}
 					}
 				}
 			}
 
+			if (nouvTerrain.porte==null) {
+				var porte:Porte = new Porte();
+				var dansMur:Boolean=true;
+				do {
+					porte.x=int(Math.random()*images[0].width*2)*GRANDEUR_CASE;
+					porte.y=int(Math.random()*images[0].height*2)*GRANDEUR_CASE;
+					dansMur=false;
+					for (var i:uint = 0; i<nouvTerrain.murs.length; i++) {
+						if (porte.x==nouvTerrain.murs[i].x&&porte.y==nouvTerrain.murs[i].y) {
+							dansMur=true;
+						}
+					}
+				} while (dansMur);
+				porte.gotoAndStop(1);
+				nouvTerrain.addChild(porte);
+				nouvTerrain.porte=porte;
+			}
+
 			var nouvEnnemi:Adware=new Adware(nouvTerrain);
-			nouvEnnemi.x=x*GRANDEUR_CASE;
-			nouvEnnemi.y=y*GRANDEUR_CASE;
+			nouvEnnemi.x=96;
+			nouvEnnemi.y=32;
 			var adware:IAAdware=new IAAdware(nouvEnnemi,monde);
 			nouvEnnemi.ia=adware;
 			nouvTerrain.ennemis.push(nouvEnnemi);
