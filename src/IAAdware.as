@@ -17,6 +17,8 @@
 		private var timer:Timer;
 		private var bitmap:Bitmap;
 		private var image:int;
+		private var selectDir:Array = [0, 1, 2, 3];
+		var aleatoire:int = selectDir[selectDir.length*Math.random() | 0];
 		
 		//public static function anim
 		
@@ -37,10 +39,29 @@
 			 adware.setVitesseX(0);
 			 adware.setVitesseY(0);
 			 adware.clic(monde.joueur.x + monde.joueur.width/2, monde.joueur.y + monde.joueur.height/2);
+			 aleatoire;
 		}
 		
 		public function loop():void{
-			//adware.setVitesseX(1);
+			adware.setVitesseX(1);
+		}
+		
+		public function changeDir (variable:int):void {
+			switch (aleatoire)
+			{
+			case aleatoire = 0:
+				adware.setVitesseX(5);
+				break;
+			case aleatoire = 1:
+				adware.setVitesseX(-5);
+				break;
+			case aleatoire = 2:
+				adware.setVitesseY(5);
+				break;
+			case aleatoire = 3:
+				adware.setVitesseY(-5);
+				break;
+			}
 		}
 		
 		public function mort():void{

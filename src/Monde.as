@@ -58,8 +58,15 @@
 			 removeChild(entree);
 			 fin = new Fin();
 			 stage.addChild(fin);
+			 fin.btnRetourF.addEventListener(MouseEvent.CLICK, recommence);
 				
 		} // fin mort
+		
+		function recommence(event:MouseEvent):void{
+			//Class(Main).menuP.visible = true;
+			//var menuP:MenuPrinc = Main.getChildByName("menuP");
+			stage.removeChild(fin);
+		}
 	}	
 
 }
