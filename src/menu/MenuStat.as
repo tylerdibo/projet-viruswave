@@ -8,7 +8,7 @@ package{
 	public class MenuStat extends MovieClip{
 			
 			var affichage:String=""; //défini variable affichage comme une string
-			var scores:Array = Main.scores.triBulles(); //défini variable scores comme une tableau
+			var scores:Array = U4A3_ProjetFinal.scores.triBulles(); //défini variable scores comme une tableau
 			
 		public function MenuStat() {
 			var monMessage:TextField = new TextField();  //défini variable monMessage comme champ de texte et crée une nouvelle champ de texte

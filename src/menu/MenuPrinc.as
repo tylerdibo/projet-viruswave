@@ -12,7 +12,7 @@ package{
 		
 		public function MenuPrinc():void{
 			
-			btnStats.addEventListener(MouseEvent.CLICK, stats); //ajouter les écouteurs d'évènements pour vérifier si l'utilisateur clique sur les bouttons
+			btnStats.addEventListener(MouseEvent.CLICK, stats); //ajouter les écouteurs d'évènements pour vérifier si l'utilisateur clique sur les boutons
 			
 			btnAide.addEventListener(MouseEvent.CLICK, aide);
 		
@@ -24,7 +24,7 @@ package{
 			menuS.btnRetour.addEventListener(MouseEvent.CLICK, retour); //ajoute écouteur d'évènement pour btnRetour dans menuStat
 		}	
 		
-		function retour (event:MouseEvent):void { //retourner au menu principale
+		function retour (event:MouseEvent):void { //retourner au menu principal
 				removeChild(menuS); 
 			}
 		
