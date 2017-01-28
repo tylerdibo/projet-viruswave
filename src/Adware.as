@@ -1,4 +1,5 @@
-﻿package{
+﻿//CLASSE CRÉER PAR: Tyler D., Adrian G.
+package{	//Importer les clases nécessaires																		
 	
 	public class Adware extends Ennemi{
 		

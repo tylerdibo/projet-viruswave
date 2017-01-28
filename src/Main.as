@@ -1,4 +1,4 @@
-﻿/*	Programmeurs:	Tyler Dibattista, Adrain Giammaria, John Atanasov	
+﻿/*	Programmeurs:	Tyler Dibattista, Adrian Giammaria, John Atanasov	
 	Date:			1/26/2017
 	File Name:		Main.as
 	Flash File: 	Main.fla
