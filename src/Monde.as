@@ -13,6 +13,7 @@
 		private var ennemi:Adware;
 		private var adware:IAAdware;
 		private var fin:Fin;
+		private var blessures:Blessures;
 		
 		public function Monde():void{
 			var maps:Array = new Array();
@@ -45,6 +46,10 @@
 			terrain.joueur = joueur;
 			entree = new Entree(joueur);
 			addChild(entree);
+			blessures = new Blessures(joueur);
+			blessures.x = 0;
+			blessures.y = 20;
+			addChild(blessures);
 		}
 		
 		function init(){
@@ -72,6 +77,7 @@
 		function loop(event:Event):void{
 			joueur.updatePositionX();
 			joueur.updatePositionY();
+			blessures.affiche();
 			
 			if(terrain.porteActive){
 				if(joueur.x + joueur.width/2 >= terrain.porte.x && 
@@ -97,6 +103,7 @@
 			 removeChild(joueur);
 			 entree.remove();
 			 removeChild(entree);
+			 removeChild(blessures);
 			 fin = new Fin();
 			 stage.addChild(fin);
 			 fin.btnRetourF.addEventListener(MouseEvent.CLICK, recommence);

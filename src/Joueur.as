@@ -8,7 +8,7 @@
 		private var vx:int = 0;
 		private var vy:int = 0;
 		private var monde:Monde;
-		private var blessures:int = 3;
+		public var blessures:int = 3;
 		//private var hitbox:Rectangle;
 		
 		public function Joueur(monde:Monde):void{
