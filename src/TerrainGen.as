@@ -87,8 +87,8 @@
 				var porte:Porte = new Porte();
 				var dansMur:Boolean=true;
 				do {
-					porte.x=int(Math.random()*images[0].width*2-1)*GRANDEUR_CASE;
-					porte.y=int(Math.random()*images[0].height*2-1)*GRANDEUR_CASE;
+					porte.x=int(Math.random()*images[0].width*2)*GRANDEUR_CASE;
+					porte.y=int(Math.random()*images[0].height*2)*GRANDEUR_CASE;
 					dansMur=false;
 					for (var i:uint = 0; i<nouvTerrain.murs.length; i++) {
 						if (porte.x==nouvTerrain.murs[i].x&&porte.y==nouvTerrain.murs[i].y) {
@@ -105,8 +105,8 @@
 				var nouvEnnemi:Adware=new Adware(nouvTerrain);
 				var enmDansMur:Boolean=true;
 				do {
-					nouvEnnemi.x=int(Math.random()*images[0].width*2-1)*GRANDEUR_CASE;
-					nouvEnnemi.y=int(Math.random()*images[0].height*2-1)*GRANDEUR_CASE;
+					nouvEnnemi.x=int(Math.random()*images[0].width*2)*GRANDEUR_CASE;
+					nouvEnnemi.y=int(Math.random()*images[0].height*2)*GRANDEUR_CASE;
 					enmDansMur=false;
 					for (var iMur:uint = 0; iMur<nouvTerrain.murs.length; iMur++) {
 						if (nouvEnnemi.x==nouvTerrain.murs[iMur].x&&nouvEnnemi.y==nouvTerrain.murs[iMur].y) {

@@ -22,7 +22,7 @@
 			triBulles();
 		}
 
-		public function ajouterScore(score:uint, nom:String) {
+		public function ajouterScore(score:int, nom:String) {
 			var nouvJoueur:XML = 
 			<joueur>
 				<score></score>
