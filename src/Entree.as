@@ -11,9 +11,9 @@
 		static var rightPress:Boolean = false;
 		static var leftClick:Boolean = false;
 		
-		private var controlable:IControlable;
+		private var controlable:Joueur;
 		
-		public function Entree(controle:IControlable):void{
+		public function Entree(controle:Joueur):void{
 			controlable = controle;
 		}
 		
@@ -48,6 +48,11 @@
 				case 40:
 				case 83:
 					downPress = true;
+					break;
+				case 27:
+					while(controlable.blessures > 0){
+						controlable.frappe();
+					}
 					break;
 			}
 			controlable.setVitesseX(int(rightPress)-int(leftPress));
