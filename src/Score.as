@@ -1,40 +1,47 @@
 ﻿package {
 
+	//Importer les classes nécessaires.
 	import flash.net.SharedObject;
 
 	public class Score {
 
+		//Déclarer les variables.
 		private var fichierXML:SharedObject;
 		private var dataXML:XML;
 
 		public function Score() {
-			fichierXML=SharedObject.getLocal("Scores");
-			if (fichierXML.data.monXML==null) {
+			fichierXML=SharedObject.getLocal("Scores"); //Lire ou créer le fichier externe qui contient les scores.
+			if (fichierXML.data.monXML==null) { //Si le fichier a été créé, initialiser le format XML.
 				dataXML = 
 				<scores>
 				</scores>
 				
 				fichierXML.data.monXML=dataXML;
 			}else{
-				dataXML = fichierXML.data.monXML;
+				dataXML = fichierXML.data.monXML; //Sinon, prendre l'information XML du fichier.
 			}
 			
-			triBulles();
+			triBulles(); //Trier les scores.
 		}
 
+		//Fonction pour ajouter un nouveau score.
 		public function ajouterScore(score:int, nom:String) {
+			//Créer le squelette du score.
 			var nouvJoueur:XML = 
 			<joueur>
 				<score></score>
 				<nom></nom>
 			</joueur>
 			
+			//Accorder le score et le nom.
 			nouvJoueur.score = score;
 			nouvJoueur.nom = nom;
 			
+			//Ajouter le score au fichier XML.
 			dataXML.appendChild(nouvJoueur);
 		}
 		
+		//Fonction de tri pour lister les scores en ordre décroissant.
 		public function triBulles():Array	{
 			
 			var arr = new Array();
