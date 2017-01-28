@@ -1,4 +1,6 @@
-﻿package{
+﻿//CLASSE CRÉÉ PAR: Adrian G.
+
+package{
 	import flash.events.Event; //importer les classes
 	import flash.display.*;
 	import flash.events.MouseEvent;
@@ -28,6 +30,6 @@
 			
 		} //fin constructeur
 	
-	}
+	}//fin classe
 
-}
+}//fin paquetage

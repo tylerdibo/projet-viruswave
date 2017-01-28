@@ -1,4 +1,5 @@
-﻿// Classe par: Adrian Giammaria
+﻿//CLASSE CRÉÉ PAR: Adrian G.
+
 package{
 	import flash.events.Event; //importer les classes nécessaires
 	import flash.display.*;
