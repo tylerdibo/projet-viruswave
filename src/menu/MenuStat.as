@@ -18,7 +18,6 @@ package{
 			
 			affichage=""
 			affichage = affichage 
-			+ "\n" + "temps joué:" + " " + (Stats.affiche(Stats.TEMPS))
 			+ "\n" + "nombre de niveaux complété:" + " " + (Stats.affiche(Stats.NCOMPLETE)) 
 			+ "\n" + "nombre d'éliminations:" + " " + (Stats.affiche(Stats.ELIM)) 
 			+ "\n" + "nombre de fois éliminé:" + " " + (Stats.affiche(Stats.JELIM)) 

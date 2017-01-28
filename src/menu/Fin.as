@@ -17,12 +17,12 @@
 			monMessage.textColor = 0xffffff;
 			
 			affichage=affichage 
-			+ "\n" + "temps joué:" + " " + (Stats.affiche(Stats.TEMPS))
 			+ "\n" + "nombre de niveaux complété:" + " " + (Stats.affiche(Stats.NCOMPLETE)) 
 			+ "\n" + "nombre d'éliminations:" + " " + (Stats.affiche(Stats.ELIM)) 
 			+ "\n" + "nombre de fois éliminé:" + " " + (Stats.affiche(Stats.JELIM)) 
 			+ "\n" + "nombre de tirs:" + " " + (Stats.affiche(Stats.TIRS)) 
-			+ "\n" + "nombre de tirs réussi:" + " " + (Stats.affiche(Stats.TIRSR));
+			+ "\n" + "nombre de tirs réussi:" + " " + (Stats.affiche(Stats.TIRSR))
+			+ "\n" + "score final: " + (Stats.affiche(Stats.ELIM) - Stats.affiche(Stats.TIRS) + (Stats.affiche(Stats.NCOMPLETE) * 30));
 			monMessage.text = affichage;
 			addChild(monMessage);
 			

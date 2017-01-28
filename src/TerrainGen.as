@@ -100,14 +100,25 @@
 				nouvTerrain.addChild(porte);
 				nouvTerrain.porte=porte;
 			}
-
-			var nouvEnnemi:Adware=new Adware(nouvTerrain);
-			nouvEnnemi.x=96;
-			nouvEnnemi.y=32;
-			var adware:IAAdware=new IAAdware(nouvEnnemi,monde);
-			nouvEnnemi.ia=adware;
-			nouvTerrain.ennemis.push(nouvEnnemi);
-			nouvTerrain.addChild(nouvEnnemi);
+			
+			for(var enm:uint; enm < niveau; enm++){
+				var nouvEnnemi:Adware=new Adware(nouvTerrain);
+				var enmDansMur:Boolean=true;
+				do {
+					nouvEnnemi.x=int(Math.random()*images[0].width*2)*GRANDEUR_CASE;
+					nouvEnnemi.y=int(Math.random()*images[0].height*2)*GRANDEUR_CASE;
+					enmDansMur=false;
+					for (var iMur:uint = 0; iMur<nouvTerrain.murs.length; iMur++) {
+						if (nouvEnnemi.x==nouvTerrain.murs[iMur].x&&nouvEnnemi.y==nouvTerrain.murs[iMur].y) {
+							enmDansMur=true;
+						}
+					}
+				} while (enmDansMur);
+				var adware:IAAdware=new IAAdware(nouvEnnemi,monde);
+				nouvEnnemi.ia=adware;
+				nouvTerrain.ennemis.push(nouvEnnemi);
+				nouvTerrain.addChild(nouvEnnemi);
+			}
 
 			nouvTerrain.niveau = niveau;
 			

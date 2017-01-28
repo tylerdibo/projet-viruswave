@@ -17,6 +17,7 @@
 			scores = new Score();
 			//trace(stats.children());
 		} //fin de constructeur
+		
 		function partie (event:MouseEvent):void {
 			//Création du monde de jeu et ajoute-le à la scène.
 			if (monde != null) {

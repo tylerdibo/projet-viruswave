@@ -120,6 +120,8 @@
 		function recommence(event:MouseEvent):void{
 			//Class(Main).menuP.visible = true;
 			//var menuP:MenuPrinc = Main.getChildByName("menuP");
+			var score:int = Stats.affiche(Stats.ELIM) - Stats.affiche(Stats.TIRS) + (Stats.affiche(Stats.NCOMPLETE) * 30);
+			Main.scores.ajouterScore(score, fin.nom_txt.text);
 			stage.removeChild(fin);
 			Main.menuP.visible = true;
 		}
