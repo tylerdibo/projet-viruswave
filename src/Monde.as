@@ -6,7 +6,7 @@
 	public class Monde extends MovieClip{
 		
 		public var terrain:Terrain;
-		private var niveauCourant:uint = 0;
+		public var niveauCourant:uint = 0;
 		public var joueur:Joueur;
 		private var entree:Entree;
 		private var ennemi:Adware;
@@ -44,7 +44,7 @@
 			terrain.joueur = joueur;
 			entree = new Entree(joueur);
 			addChild(entree);
-			blessures = new Blessures(joueur);
+			blessures = new Blessures(this);
 			blessures.x = 0;
 			blessures.y = 20;
 			addChild(blessures);
@@ -120,8 +120,6 @@
 		function recommence(event:MouseEvent):void{
 			//Class(Main).menuP.visible = true;
 			//var menuP:MenuPrinc = Main.getChildByName("menuP");
-			var score:int = Stats.affiche(Stats.ELIM) - Stats.affiche(Stats.TIRS) + (Stats.affiche(Stats.NCOMPLETE) * 30);
-			Main.scores.ajouterScore(score, fin.nom_txt.text);
 			stage.removeChild(fin);
 			Main.menuP.visible = true;
 		}
