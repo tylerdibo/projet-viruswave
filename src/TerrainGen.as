@@ -59,21 +59,21 @@
 								break;
 							case 0xFFFF00 :
 								var nouvPlancher:Plancher = new Plancher();
-								nouvPlancher.gotoAndStop(int(Math.random()*4));
+								nouvPlancher.gotoAndStop(int(Math.random()*4+1));
 								nouvPlancher.x=x*GRANDEUR_CASE;
 								nouvPlancher.y=y*GRANDEUR_CASE;
 								nouvTerrain.ajouterCase(nouvPlancher, false);
 								break;
 							case 0xFF0000 :
 								var nouvTrou:Mur = new Mur();
-								nouvTrou.gotoAndStop(int(Math.random()*5));
+								nouvTrou.gotoAndStop(int(Math.random()*5+1));
 								nouvTrou.x=x*GRANDEUR_CASE;
 								nouvTrou.y=y*GRANDEUR_CASE;
 								nouvTerrain.ajouterCase(nouvTrou, true);
 								break;
 							case 0xFFFFFF :
 								var nouvMur:Mur = new Mur();
-								nouvMur.gotoAndStop(5);
+								nouvMur.gotoAndStop(6);
 								nouvMur.x=x*GRANDEUR_CASE;
 								nouvMur.y=y*GRANDEUR_CASE;
 								nouvTerrain.ajouterCase(nouvMur, false);

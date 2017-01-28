@@ -46,7 +46,6 @@ package{
 				break;
 			case TIRS:
 				nTirs++; //ajout 1 au nombre de fois le joueur a tiré
-				trace(nTirs);
 				break;
 			case TIRSR:
 				nTirsR++; //ajout 1 au nombre de fois le joueur a réussi a frapper un ennemi

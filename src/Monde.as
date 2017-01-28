@@ -6,17 +6,18 @@
 	public class Monde extends MovieClip{
 		
 		public var terrain:Terrain;
-		private var terrainsListe:Array = new Array();
-		private var terrainCourant:uint = 0;
+		private var niveauCourant:uint = 0;
 		public var joueur:Joueur;
 		private var entree:Entree;
 		private var ennemi:Adware;
 		private var adware:IAAdware;
 		private var fin:Fin;
 		private var blessures:Blessures;
+		private var maps:Array = new Array();
 		
 		public function Monde():void{
-			var maps:Array = new Array();
+			Stats.supprime(-1);
+			
 			maps.push(new map01(0, 0));
 			maps.push(new map02(0, 0));
 			maps.push(new map03(0, 0));
@@ -28,17 +29,14 @@
 			maps.push(new map09(0, 0));
 			maps.push(new map10(0, 0));
 			
-			var quadrants:Array;
-			for(var i:uint = 0; i < 5; i++){
-				quadrants = new Array();
-				for(var q:uint = 0; q < 4; q++){
-					quadrants[q] = maps[int(Math.random()*10)].clone();
-				}
-				terrainsListe.push(TerrainGen.creerTerrain(quadrants, this, q));
-			}
-			
-			terrain = terrainsListe[terrainCourant];
+			var quadrants:Array = new Array();
+			for(var q:uint = 0; q < 4; q++){
+				quadrants[q] = maps[int(Math.random()*10)].clone();
+			}			
+			niveauCourant++;
+			terrain = TerrainGen.creerTerrain(quadrants, this, niveauCourant);
 			addChild(terrain);
+			
 			joueur = new Joueur(this);
 			joueur.x = 200;
 			joueur.y = 300;
@@ -63,8 +61,13 @@
 		private function prochainNiveau():void{
 			removeChild(terrain);
 			
-			terrainCourant++;
-			terrain = terrainsListe[terrainCourant];
+			var quadrants:Array = new Array();
+			for(var q:uint = 0; q < 4; q++){
+				quadrants[q] = maps[int(Math.random()*10)].clone();
+			}			
+			niveauCourant++;
+			terrain = TerrainGen.creerTerrain(quadrants, this, niveauCourant);
+			addChild(terrain);
 			terrain.joueur = joueur;
 			addChild(terrain);
 			setChildIndex(joueur, getChildIndex(terrain));
@@ -72,6 +75,8 @@
 			for(var enm:uint; enm < terrain.ennemis.length; enm++){
 				terrain.ennemis[enm].ia.init();
 			}
+			
+			Stats.addition(Stats.NCOMPLETE);
 		}
 		
 		function loop(event:Event):void{
@@ -96,6 +101,8 @@
 		}
 		
 		function mort():void{
+			Stats.addition(Stats.JELIM);
+			
 			for(var i:uint = 0; i < terrain.ennemis.length; i++){
 				terrain.ennemis[i].ia.mort();
 			} 

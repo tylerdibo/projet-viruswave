@@ -15,7 +15,6 @@ package{
 			monMessage.y = 50;
 			monMessage.autoSize = TextFieldAutoSize.CENTER;
 			monMessage.textColor = 0xffffff;
-			trace(Stats.affiche(Stats.ELIM));
 			
 			affichage=""
 			affichage = affichage 

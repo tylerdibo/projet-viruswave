@@ -37,6 +37,7 @@
 					if(hitTestObject(terrain.ennemis[e])){
 						terrain.ennemiMort(e);
 						Stats.addition(Stats.ELIM);
+						Stats.addition(Stats.TIRSR);
 						removeThis();
 						break;
 					}
