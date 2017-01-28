@@ -37,6 +37,26 @@
 			
 			dataXML.appendChild(nouvJoueur);
 		}
+		
+		public function triBulles()	{
+			
+			var arr = new Array(7,2,10,4);
+            var temp:int;
+                for(var i:uint=0; i < arr.length; i++)
+                {
+                    for(var j:uint=arr.length-1; j > i; j--)
+                    {
+						if (arr[j-1] < arr[j]){
+							
+                     		temp = arr[j-1];
+           					arr[j-1] = arr[j];  
+            				arr[j] = temp;
+						}
+                    }
+                }
+            
+             trace(arr);
+		}
 
 	}
 
