@@ -1,9 +1,11 @@
-﻿package{
+﻿ //CLASSE CRÉÉ PAR: Adrian G., Tyler D., John A.
+
+package{
 	
-	import flash.display.*;
+	import flash.display.*; //importer les classes
 	import flash.events.*;
 	
-	public class Monde extends MovieClip{
+	public class Monde extends MovieClip{ //défini les variables
 		
 		public var terrain:Terrain;
 		public var niveauCourant:uint = 0;
@@ -15,7 +17,7 @@
 		private var blessures:Blessures;
 		private var maps:Array = new Array();
 		
-		public function Monde():void{
+		public function Monde():void{ //supprime les statistiques lorsqu'une nouvelle partie commence et ajoute tout les modèles
 			Stats.supprime(-1);
 			
 			maps.push(new map01(0, 0));
@@ -29,11 +31,11 @@
 			maps.push(new map09(0, 0));
 			maps.push(new map10(0, 0));
 			
-			var quadrants:Array = new Array();
+			var quadrants:Array = new Array(); //choisi 4 modèles aléatoirement
 			for(var q:uint = 0; q < 4; q++){
 				quadrants[q] = maps[int(Math.random()*10)].clone();
 			}			
-			niveauCourant++;
+			niveauCourant++; //ajoute les éléments aux jeu 
 			terrain = TerrainGen.creerTerrain(quadrants, this, niveauCourant);
 			addChild(terrain);
 			
@@ -125,6 +127,6 @@
 			stage.removeChild(fin);
 			Main.menuP.visible = true;
 		}
-	}	
+	}	//fin classe
 
-}
+} //fin paquetage
