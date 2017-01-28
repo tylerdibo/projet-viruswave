@@ -1,10 +1,12 @@
-﻿package {
+﻿//CLASSE CRÉÉ PAR: Tyler D.
+package {	//Importer les classes nécessaires
 	
 	import flash.display.*;
 	import flash.events.*;
 	
-	public class Entree extends MovieClip{
+	public class Entree extends MovieClip{ //Création de la classe Entree qui prends les entrées du clavier et de la souris
 		
+		//Établie les variables des clés de claviers et souris
 		static var upPress:Boolean = false;
 		static var downPress:Boolean = false;
 		static var leftPress:Boolean = false;
@@ -13,25 +15,25 @@
 		
 		private var controlable:Joueur;
 		
-		public function Entree(controle:Joueur):void{
+		public function Entree(controle:Joueur):void{	//Création de la fonction Entree qui permet de controler l'avatar du joueur
 			controlable = controle;
 		}
 		
-		function init():void{
+		function init():void{	//Création de la fonction init qui rends tous les entrées à l'écoute (initialiser)
 			stage.addEventListener(KeyboardEvent.KEY_DOWN, keyDown);
 			stage.addEventListener(KeyboardEvent.KEY_UP, keyUp);
 			stage.addEventListener(MouseEvent.MOUSE_DOWN, mouseDown);
 			stage.addEventListener(MouseEvent.MOUSE_UP, mouseUp);
 		}
 		
-		function remove():void{
+		function remove():void{	//Création de la fonction remove qui enlève les entrées lorsque le match n'est pas active
 			stage.removeEventListener(KeyboardEvent.KEY_DOWN, keyDown);
 			stage.removeEventListener(KeyboardEvent.KEY_UP, keyUp);
 			stage.removeEventListener(MouseEvent.MOUSE_DOWN, mouseDown);
 			stage.removeEventListener(MouseEvent.MOUSE_UP, mouseUp);
 		}
 		
-		function keyDown(event:KeyboardEvent):void{
+		function keyDown(event:KeyboardEvent):void{	//Création de la fonction qui initialise d'autres clés (W, A, S, D,  ESC) activé
 			switch(event.keyCode){
 				case 37:
 				case 65:
@@ -59,7 +61,7 @@
 			controlable.setVitesseY(int(downPress)-int(upPress));
 		}
 		
-		function keyUp(event:KeyboardEvent):void{
+		function keyUp(event:KeyboardEvent):void{	//Création de la fonction qui initialise d'autres clés (W, A, S, D,  ESC) inactivé
 			switch(event.keyCode){
 				case 37:
 				case 65:
@@ -82,13 +84,13 @@
 			controlable.setVitesseY(int(downPress)-int(upPress));
 		}
 		
-		function mouseDown(event:MouseEvent):void{
-			leftClick = true;
-			controlable.clic(mouseX, mouseY);
+		function mouseDown(event:MouseEvent):void{	//Création de la fonction mouseDown 
+			leftClick = true;	//Le bouton gauche sur la souris est activé
+			controlable.clic(mouseX, mouseY);	//Prends les coordonnés de pour déterminer l'orientation du tir
 		}
 		
 		function mouseUp(event:MouseEvent):void{
-			leftClick = false;
+			leftClick = false;	//Le bouton gauche sur la souris est nonactivé
 		}
 		
 	}
