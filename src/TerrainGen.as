@@ -29,14 +29,14 @@
 				murExt = new Mur();
 				murExt.gotoAndStop(int(Math.random()*5));
 				murExt.x=0;
-				murExt.y=yMur*GRANDEUR_CASE;
+				murExt.y=(yMur+1)*GRANDEUR_CASE;
 				murExt.visible = false;
 				nouvTerrain.ajouterCase(murExt, false);
 				
 				murExt = new Mur();
 				murExt.gotoAndStop(int(Math.random()*5));
 				murExt.x=(images[0].width*2 + 1)*GRANDEUR_CASE;
-				murExt.y=yMur*GRANDEUR_CASE;
+				murExt.y=(yMur+1)*GRANDEUR_CASE;
 				murExt.visible = false;
 				nouvTerrain.ajouterCase(murExt, false);
 			}

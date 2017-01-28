@@ -6,7 +6,7 @@
 	public class Main extends MovieClip{
 		static public var menuP:MenuPrinc; //défini variable statique menuP comme movieclip MenuPrinc
 		private var monde:Monde; //défini variable monde comme movieclip Monde
-		private var scores:Score;
+		static public var scores:Score;
 		private var fin:Fin;
 		
 		public function Main(){

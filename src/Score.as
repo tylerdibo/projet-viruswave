@@ -18,11 +18,8 @@
 			}else{
 				dataXML = fichierXML.data.monXML;
 			}
-
-			ajouterScore(1000, "Tyler");
-			ajouterScore(2000, "John");
 			
-			trace(dataXML);
+			triBulles();
 		}
 
 		public function ajouterScore(score:uint, nom:String) {
@@ -38,15 +35,18 @@
 			dataXML.appendChild(nouvJoueur);
 		}
 		
-		public function triBulles()	{
+		public function triBulles():Array	{
 			
-			var arr = new Array(7,2,10,4);
-            var temp:int;
+			var arr = new Array();
+			for each(var iXML:XML in dataXML.joueur){
+				arr.push(iXML);
+			}
+            var temp:XML;
                 for(var i:uint=0; i < arr.length; i++)
                 {
                     for(var j:uint=arr.length-1; j > i; j--)
                     {
-						if (arr[j-1] < arr[j]){
+						if (arr[j-1].score < arr[j].score){
 							
                      		temp = arr[j-1];
            					arr[j-1] = arr[j];  
@@ -55,7 +55,7 @@
                     }
                 }
             
-             trace(arr);
+             return(arr);
 		}
 
 	}
