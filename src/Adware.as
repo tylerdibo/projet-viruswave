@@ -13,6 +13,7 @@
 		override public function clic(xSouris:int, ySouris:int):void{
 			var laser:Laser = new Laser(this.x + this.width/2, this.y + this.height/2, xSouris, ySouris, terrain, false);
 			terrain.addChild(laser);
+			laser.gotoAndPlay(2);
 		}
 		
 	}

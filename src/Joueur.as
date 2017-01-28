@@ -18,6 +18,7 @@
 		public function clic(xCible:int, yCible:int):void{
 			var laser:Laser = new Laser(this.x + this.width/2, this.y + this.height/2, xCible, yCible, monde.terrain, true);
 			monde.terrain.addChild(laser);
+			laser.stop();
 			Stats.addition(Stats.TIRS);
 		}
 		
