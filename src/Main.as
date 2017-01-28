@@ -16,7 +16,7 @@ IControlable, Joueur, Laser, Monde, Porte, Score, Stats, Terrain, TerrainGen*/
 /*Liste des modifications apporté au projet présent au lien Github : https://github.com/tylerdibo/projet-viruswave/ 
 Tous les ressources visuelles son aussi présent sur Github.*/
 
-//CLASSE CRÉER PAR: Tyler D., Adrian G., John A.
+//CLASSE CRÉÉ PAR: Tyler D., Adrian G., John A.
 
 package {	//Importer les classes nécessaires																		
 	

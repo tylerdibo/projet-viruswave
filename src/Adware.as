@@ -1,4 +1,4 @@
-﻿//CLASSE CRÉER PAR: Tyler D., Adrian G.
+﻿//CLASSE CRÉÉ PAR: Tyler D., Adrian G.
 package{	//Importer les classes nécessaires																		
 	
 	public class Adware extends Ennemi{	//Création de la classe Adware qui étant Ennemi 

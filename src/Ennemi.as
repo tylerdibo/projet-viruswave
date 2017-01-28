@@ -1,4 +1,4 @@
-﻿//CLASSE CRÉER PAR: Tyler D.
+﻿//CLASSE CRÉÉ PAR: Tyler D.
 package{	//Importer les classes nécessaires
 
 	import flash.display.*;	//Ensemble des classes clés pour l'affichage visuelle en flash

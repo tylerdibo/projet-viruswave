@@ -1,4 +1,5 @@
-﻿package {
+﻿//CLASSE CRÉÉ PAR: Tyler D.
+package {
 	
 	//Importer les classes nécessaires.
 	import flash.display.*;
