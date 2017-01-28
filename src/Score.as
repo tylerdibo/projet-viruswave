@@ -1,4 +1,5 @@
-﻿package {
+﻿//CLASSE CRÉÉE PAR: Tyler D., John A.
+package {
 
 	//Importer les classes nécessaires.
 	import flash.net.SharedObject;
@@ -41,7 +42,7 @@
 			dataXML.appendChild(nouvJoueur);
 		}
 		
-		//Fonction de tri pour lister les scores en ordre décroissant.
+		//Fonction de tri de bulles pour lister les scores en ordre décroissant.
 		public function triBulles():Array	{
 			
 			var arr = new Array();
@@ -49,22 +50,25 @@
 				arr.push(iXML);
 			}
             var temp:XML;
+				//Boucle for qui passe à travers chaque indice dans le tableau arr
                 for(var i:uint=0; i < arr.length; i++)
                 {
+					//Boucle for qui passe à travers l'indice -1 pour formé la comparaison entre deux éléments d'un tableau telle que le tri de bulles 
                     for(var j:uint=arr.length-1; j > i; j--)
                     {
-						if (arr[j-1].score < arr[j].score){
+						if (arr[j-1].score < arr[j].score){	//Lorsque la valeur de score du tableau arr (indice moins 1) est moins que la valeur dans l'indice normal de arr
 							
-                     		temp = arr[j-1];
-           					arr[j-1] = arr[j];  
-            				arr[j] = temp;
-						}
-                    }
-                }
+                     		temp = arr[j-1];	//La valeur de temp est égale au nombre plus petit
+           					arr[j-1] = arr[j];  //La valeur de l'indice qui possède la valeur plus petit prend la valeur de l'indice avec la valeur plus grande
+            				arr[j] = temp;		//La valeur de l'indice qui possède la valeur plus grande prends la valeur plus petit
+							//Donc une échange de valeur est fait pour déplacer la valeur plus grande vers l'indice le plus petit
+						}	//Fin de l'énoncé if
+                    }	//Fin de la boucle for (j)
+                }	//Fin de la boucle for (i)
             
-             return(arr);
-		}
+             return(arr);	//Retourne le tableau arr
+		}	//Fin de la fonction triBulles
 
-	}
+	}	//Fin de la classe score
 
-}
+}	//Fin du package
