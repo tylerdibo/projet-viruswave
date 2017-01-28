@@ -1,4 +1,4 @@
-﻿//CLASSE CRÉÉ PAR: Tyler D.
+﻿//CLASSE CRÉÉE PAR: Tyler D.
 package {	//Importer les classes nécessaires
 	
 	import flash.display.*;
@@ -57,6 +57,7 @@ package {	//Importer les classes nécessaires
 					}
 					break;
 			}
+			//Modifier la vitesse à partir des touches de clavier.
 			controlable.setVitesseX(int(rightPress)-int(leftPress));
 			controlable.setVitesseY(int(downPress)-int(upPress));
 		}
@@ -80,13 +81,14 @@ package {	//Importer les classes nécessaires
 					downPress = false;
 					break;
 			}
+			//Modifier la vitesse à partir des touches de clavier.
 			controlable.setVitesseX(int(rightPress)-int(leftPress));
 			controlable.setVitesseY(int(downPress)-int(upPress));
 		}
 		
 		function mouseDown(event:MouseEvent):void{	//Création de la fonction mouseDown 
 			leftClick = true;	//Le bouton gauche sur la souris est activé
-			controlable.clic(mouseX, mouseY);	//Prends les coordonnés de pour déterminer l'orientation du tir
+			controlable.clic(mouseX, mouseY);	//Prends les coordonnés de la souris pour déterminer l'orientation du tir
 		}
 		
 		function mouseUp(event:MouseEvent):void{
