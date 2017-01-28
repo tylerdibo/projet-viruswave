@@ -1,4 +1,4 @@
-﻿// Classe par: Adrian Giammaria
+﻿//CLASSE CRÉER PAR: Adrian G.
 package{
 	
 	public class Stats { //défini stats comme classe publique
