@@ -4,7 +4,7 @@
 	import flash.events.*;
 	
 	public class Main extends MovieClip{
-		private var menuP:MenuPrinc; //défini variable menuP comme movieclip MenuPrinc
+		static public var menuP:MenuPrinc; //défini variable statique menuP comme movieclip MenuPrinc
 		private var monde:Monde; //défini variable monde comme movieclip Monde
 		private var stats:XML;
 		private var fin:Fin;
@@ -27,7 +27,7 @@
 			monde.init(); //Initialisation du monde.
 			
 			//Enlever le menuP.
-			//menuP.visible = false;
+			menuP.visible = false;
 		}
 		
 	}

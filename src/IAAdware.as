@@ -17,8 +17,6 @@
 		private var timer:Timer;
 		private var bitmap:Bitmap;
 		private var image:int;
-		private var selectDir:Array = [0, 1, 2, 3];
-		var aleatoire:int = selectDir[selectDir.length*Math.random() | 0];
 		
 		//public static function anim
 		
@@ -28,38 +26,42 @@
 			
 			timer = new Timer(1000); //Créer un nouveau Timer qui donne un événement à chaque 5 secondes.
 			timer.addEventListener(TimerEvent.TIMER, periodique);
-			timer.start();
+			
 			/*if (!animation) {
 			var charge:Loader = new Loader();
 			//charge.contentLoaderInfo.addEventListener(Event.COMPLETE, onLoadComplete);
 			charge.load(new URLRequest("spywareTir_Animation 1_0.png"));*/
 		}
 		
+		public function init():void{
+			timer.start();
+		}
+		
 		function periodique(event:TimerEvent):void{
 			 adware.setVitesseX(0);
 			 adware.setVitesseY(0);
 			 adware.clic(monde.joueur.x + monde.joueur.width/2, monde.joueur.y + monde.joueur.height/2);
-			 aleatoire;
+			 changeDir(int(Math.random()*4));
 		}
 		
 		public function loop():void{
-			adware.setVitesseX(1);
+			//adware.setVitesseX(1);
 		}
 		
-		public function changeDir (variable:int):void {
-			switch (aleatoire)
+		private function changeDir (dir:int):void {
+			switch (dir)
 			{
-			case aleatoire = 0:
-				adware.setVitesseX(5);
+			case dir = 0:
+				adware.setVitesseX(1);
 				break;
-			case aleatoire = 1:
-				adware.setVitesseX(-5);
+			case dir = 1:
+				adware.setVitesseX(-1);
 				break;
-			case aleatoire = 2:
-				adware.setVitesseY(5);
+			case dir = 2:
+				adware.setVitesseY(1);
 				break;
-			case aleatoire = 3:
-				adware.setVitesseY(-5);
+			case dir = 3:
+				adware.setVitesseY(-1);
 				break;
 			}
 		}

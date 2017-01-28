@@ -7,6 +7,7 @@
 		
 		public var terrain:Terrain;
 		private var terrainsListe:Array = new Array();
+		private var terrainCourant:uint = 0;
 		public var joueur:Joueur;
 		private var entree:Entree;
 		private var ennemi:Adware;
@@ -19,7 +20,23 @@
 			maps.push(new map02(0, 0));
 			maps.push(new map03(0, 0));
 			maps.push(new map04(0, 0));
-			terrain = TerrainGen.creerTerrain(maps, this);
+			maps.push(new map05(0, 0));
+			maps.push(new map06(0, 0));
+			maps.push(new map07(0, 0));
+			maps.push(new map08(0, 0));
+			maps.push(new map09(0, 0));
+			maps.push(new map10(0, 0));
+			
+			var quadrants:Array;
+			for(var i:uint = 0; i < 5; i++){
+				quadrants = new Array();
+				for(var q:uint = 0; q < 4; q++){
+					quadrants[q] = maps[int(Math.random()*10)].clone();
+				}
+				terrainsListe.push(TerrainGen.creerTerrain(quadrants, this));
+			}
+			
+			terrain = terrainsListe[terrainCourant];
 			addChild(terrain);
 			joueur = new Joueur(this);
 			joueur.x = 200;
@@ -32,7 +49,24 @@
 		
 		function init(){
 			entree.init();
+			for(var enm:uint; enm < terrain.ennemis.length; enm++){
+				terrain.ennemis[enm].ia.init();
+			}
 			stage.addEventListener(Event.ENTER_FRAME, loop);
+		}
+		
+		private function prochainNiveau():void{
+			removeChild(terrain);
+			
+			terrainCourant++;
+			terrain = terrainsListe[terrainCourant];
+			terrain.joueur = joueur;
+			addChild(terrain);
+			setChildIndex(joueur, getChildIndex(terrain));
+			setChildIndex(terrain, getChildIndex(joueur)-1);
+			for(var enm:uint; enm < terrain.ennemis.length; enm++){
+				terrain.ennemis[enm].ia.init();
+			}
 		}
 		
 		function loop(event:Event):void{
@@ -40,7 +74,12 @@
 			joueur.updatePositionY();
 			
 			if(terrain.porteActive){
-				
+				if(joueur.x + joueur.width/2 >= terrain.porte.x && 
+				   		joueur.x + joueur.width/2 <= (terrain.porte.x + terrain.porte.width) &&
+				   		joueur.y + joueur.height/2 >= terrain.porte.y && 
+				   		joueur.y + joueur.height/2 <= (terrain.porte.y + terrain.porte.height)){
+					prochainNiveau();
+				}
 			}
 			
 			for(var i:uint = 0; i < terrain.ennemis.length; i++){
@@ -68,6 +107,7 @@
 			//Class(Main).menuP.visible = true;
 			//var menuP:MenuPrinc = Main.getChildByName("menuP");
 			stage.removeChild(fin);
+			Main.menuP.visible = true;
 		}
 	}	
 

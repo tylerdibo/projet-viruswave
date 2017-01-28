@@ -24,7 +24,7 @@
 		}
 		
 		private function removeThis(){
-			stage.removeChild(this);
+			terrain.removeChild(this);
 			this.removeEventListener(Event.ENTER_FRAME, loop);
 		}
 		
