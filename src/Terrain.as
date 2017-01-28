@@ -11,6 +11,7 @@
 		public var joueur:Joueur;
 		public var porte:Porte;
 		public var porteActive:Boolean = false;
+		public var niveau:uint;
 		
 		public function Terrain():void{
 			/*for(var i:uint; i<5; i++){

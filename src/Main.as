@@ -6,7 +6,7 @@
 	public class Main extends MovieClip{
 		static public var menuP:MenuPrinc; //défini variable statique menuP comme movieclip MenuPrinc
 		private var monde:Monde; //défini variable monde comme movieclip Monde
-		private var stats:XML;
+		private var scores:Score;
 		private var fin:Fin;
 		
 		public function Main(){
@@ -14,7 +14,7 @@
 			menuP = new MenuPrinc();
 			addChild(menuP);
 			menuP.btnPartie.addEventListener(MouseEvent.CLICK, partie); //Ajouter un écouteur d'événement pour commencer le jeu.
-			stats = new XML(new Stats());
+			scores = new Score();
 			//trace(stats.children());
 		} //fin de constructeur
 		function partie (event:MouseEvent):void {

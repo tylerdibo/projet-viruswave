@@ -34,7 +34,7 @@
 				for(var q:uint = 0; q < 4; q++){
 					quadrants[q] = maps[int(Math.random()*10)].clone();
 				}
-				terrainsListe.push(TerrainGen.creerTerrain(quadrants, this));
+				terrainsListe.push(TerrainGen.creerTerrain(quadrants, this, q));
 			}
 			
 			terrain = terrainsListe[terrainCourant];

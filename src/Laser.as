@@ -44,6 +44,7 @@
 			}else{
 				if(hitTestObject(terrain.joueur)){
 					terrain.joueur.frappe();
+					removeThis();
 				}
 			}
 			

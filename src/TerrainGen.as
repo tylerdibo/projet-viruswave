@@ -6,7 +6,7 @@
 
 		private static const GRANDEUR_CASE:int=32;
 
-		public static function creerTerrain(images:Array, monde:Monde):Terrain {
+		public static function creerTerrain(images:Array, monde:Monde, niveau:uint):Terrain {
 			var nouvTerrain:Terrain = new Terrain();
 
 			var murExt:Mur;
@@ -65,11 +65,18 @@
 								nouvTerrain.ajouterCase(nouvPlancher, false);
 								break;
 							case 0xFF0000 :
+								var nouvTrou:Mur = new Mur();
+								nouvTrou.gotoAndStop(int(Math.random()*5));
+								nouvTrou.x=x*GRANDEUR_CASE;
+								nouvTrou.y=y*GRANDEUR_CASE;
+								nouvTerrain.ajouterCase(nouvTrou, true);
+								break;
+							case 0xFFFFFF :
 								var nouvMur:Mur = new Mur();
-								nouvMur.gotoAndStop(int(Math.random()*5));
+								nouvMur.gotoAndStop(5);
 								nouvMur.x=x*GRANDEUR_CASE;
 								nouvMur.y=y*GRANDEUR_CASE;
-								nouvTerrain.ajouterCase(nouvMur, true);
+								nouvTerrain.ajouterCase(nouvMur, false);
 								break;
 						}
 					}
@@ -102,6 +109,8 @@
 			nouvTerrain.ennemis.push(nouvEnnemi);
 			nouvTerrain.addChild(nouvEnnemi);
 
+			nouvTerrain.niveau = niveau;
+			
 			return nouvTerrain;
 		}
 
