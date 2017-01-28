@@ -1,22 +1,22 @@
 ﻿package{
-	import flash.events.Event;
+	import flash.events.Event; //importer les classes
 	import flash.display.*;
 	import flash.events.MouseEvent;
 	import flash.text.*
 	
 	public class Fin extends MovieClip{
 		
-			var affichage:String="";
-			var affichageFin:String="";
+			var affichage:String=""; //défini variable affichage comme un string
+			
 		
 		public function Fin():void{
-			var monMessage:TextField = new TextField();
+			var monMessage:TextField = new TextField(); //défini les propriétés du textfield monMessage
 			monMessage.x = 100;
 			monMessage.y = 50;
 			monMessage.autoSize = TextFieldAutoSize.CENTER;
 			monMessage.textColor = 0xffffff;
 			
-			affichage=affichage 
+			affichage=affichage  //affiche les statistiques
 			+ "\n" + "nombre de niveaux complété:" + " " + (Stats.affiche(Stats.NCOMPLETE)) 
 			+ "\n" + "nombre d'éliminations:" + " " + (Stats.affiche(Stats.ELIM)) 
 			+ "\n" + "nombre de fois éliminé:" + " " + (Stats.affiche(Stats.JELIM)) 
@@ -26,7 +26,7 @@
 			monMessage.text = affichage;
 			addChild(monMessage);
 			
-		} //fin de fonction publiquek
+		} //fin constructeur
 	
 	}
 
