@@ -1,8 +1,9 @@
-﻿package {
+﻿//CLASSE CRÉER PAR: Tyler D.
+package {	//Importer les classes nécessaires
 	
-	import flash.geom.Point;
-	import flash.display.*;
-	import flash.events.Event;
+	import flash.geom.Point;	//Ensemble des classes pour l'utilisation de l'orientation du curseur
+	import flash.display.*;		//Ensemble des classes clés pour l'affichage visuelle en flash
+	import flash.events.Event;	//Ensemble de classes clés pour l'utilisation du souris en flash
 	
 	public class Laser extends MovieClip{
 		

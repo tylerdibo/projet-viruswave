@@ -21,7 +21,7 @@ Tous les ressources visuelles son aussi présent sur Github.*/
 package {	//Importer les classes nécessaires																		
 	
 	import flash.display.*;		//Ensemble des classes clés pour l'affichage visuelle en flash						
-	import flash.events.*;		//Ensemble des classes clés pour l'utilisation de texte en flash					
+	import flash.events.*;		//Ensemble de classes clés pour l'utilisation du souris en flash
 	import flash.media.*;		//Ensemble de classes clés pour le son
 	
 	public class Main extends MovieClip{	//Création de la classe Main												
